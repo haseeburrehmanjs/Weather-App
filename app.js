@@ -3,16 +3,20 @@ let input = document.querySelector('#input')
 let checkBtn = document.querySelector('#checkBtn')
 let form = document.querySelector('form')
 let div = document.querySelector('#main-div')
+let weatherData = []
+
 
 // SUBMIT BUTTON
 form.addEventListener('submit', (event) => {
     event.preventDefault()
     // API CALLING
     axios(`http://api.weatherapi.com/v1/current.json?key=e3e98122324b454b92f44333241406&q=${input.value}&aqi=no`)
-        .then(responce => {
-            let data = responce.data
+    .then(responce => {
+        input.value = ''
+        let data = responce.data
+        console.log(data);
             // RENDER CARD
-            div.innerHTML += `
+           weatherData = div.innerHTML += `
         <div class="card mx-auto" style="width: 18rem;">
         <div class="card-body text-center">
           <h5 class="card-title" id="location">${data.location.name}</h5>
