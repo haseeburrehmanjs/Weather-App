@@ -17,7 +17,7 @@ form.addEventListener('submit', (event) => {
         console.log(data);
             // RENDER CARD
            weatherData = div.innerHTML += `
-        <div class="card mx-auto" style="width: 18rem;">
+        <div class="card mx-auto" style="width: 30rem;">
         <div class="card-body text-center">
           <h5 class="card-title" id="location">${data.location.name}</h5>
           <h6 class="card-subtitle mb-2 text-muted" id="date">${data.location.localtime}</h6>
@@ -28,6 +28,7 @@ form.addEventListener('submit', (event) => {
         })
         .catch(error => {
             console.log(error);
+            alert('this city is not here!')
         })
 })
 
