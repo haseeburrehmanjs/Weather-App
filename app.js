@@ -10,7 +10,7 @@ let weatherData = []
 form.addEventListener('submit', (event) => {
     event.preventDefault()
     // API CALLING
-    axios(`http://api.weatherapi.com/v1/current.json?key=e3e98122324b454b92f44333241406&q=${input.value}&aqi=no`)
+    axios(`https://api.weatherapi.com/v1/current.json?key=e3e98122324b454b92f44333241406&q=${input.value}&aqi=no`)
     .then(responce => {
         input.value = ''
         let data = responce.data
